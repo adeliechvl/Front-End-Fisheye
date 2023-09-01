@@ -1,18 +1,5 @@
 async function getPhotographers() {
-    const data = await getData();
-    console.log(data);
-    return { photographers: data.photographers }
-}
-
-async function getData () {
-    const json = "../../data/photographers.json";
-    const response = fetch(json);
-    if (!response.ok) {
-        console.log(response.status)
-        console.log(response.statusText)
-        throw new Error ("problème de récupération de la promesse")
-    }
-    
+    const response = await fetch('./data/photographers.json');
     const data = await response.json();
     return data;
 }
