@@ -14,12 +14,15 @@ function photographerTemplate(data) {
 
         const localisation = document.createElement("p");
         localisation.innerText = `${city}, ${country}`;
+        localisation.setAttribute("class", "localisation");
 
         const pTagline = document.createElement("p");
         pTagline.innerText = tagline;
+        pTagline.setAttribute("class", "tagline");
 
         const pPrice = document.createElement("p");
         pPrice.innerText = `${price}€/jour`;
+        pPrice.setAttribute("class", "price");
 
         article.appendChild(img);
         article.appendChild(photographerName);

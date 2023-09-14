@@ -56,7 +56,22 @@ h1 {
 }
 
 .photographer_section article p {
-    font-size: 10px;
     font-weight: 400;
+}
+
+.localisation {
+    font-size: 13px;
+    color: #901C1C;
+    margin-bottom: 5px;
+}
+
+.tagline {
+    font-size: 10px;
     margin: 0;
+}
+
+.price {
+    font-size: 9px;
+    color: #757575;
+    margin: 3px;
 }
