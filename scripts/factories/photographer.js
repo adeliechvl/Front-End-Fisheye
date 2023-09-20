@@ -1,36 +1,45 @@
+// function template to create UserCardDom
+
 function photographerTemplate(data) {
-    const { name, portrait, city, country, tagline, price } = data;
+    const { name, portrait, city, country, tagline, price, id } = data;
 
     const picture = `assets/photographers/${portrait}`;
 
     function getUserCardDOM() {
+
+        //creating elements from the dom
         const article = document.createElement('article');
-
-        const img = document.createElement('img');
-        img.setAttribute("src", picture)
-
+        const link = document.createElement('a');
         const photographerName = document.createElement('h2');
-        photographerName.innerText = name;
-
+        const img = document.createElement('img');
         const localisation = document.createElement("p");
-        localisation.innerText = `${city}, ${country}`;
-        localisation.setAttribute("class", "localisation");
-
         const pTagline = document.createElement("p");
-        pTagline.innerText = tagline;
-        pTagline.setAttribute("class", "tagline");
-
         const pPrice = document.createElement("p");
-        pPrice.innerText = `${price}€/jour`;
-        pPrice.setAttribute("class", "price");
+        const url = `./photographer.html?id=${id}`;
 
-        article.appendChild(img);
-        article.appendChild(photographerName);
-        article.appendChild(localisation);
-        article.appendChild(pTagline);
-        article.appendChild(pPrice);
+        //inserting attributs for each elements
+        img.setAttribute("src", picture)
+        localisation.setAttribute("class", "localisation");
+        pTagline.setAttribute("class", "tagline");
+        pPrice.setAttribute("class", "price");
+        link.setAttribute("href", url);
+
+        //text to show with collected data
+        photographerName.innerText = name;
+        localisation.innerText = `${city}, ${country}`;
+        pTagline.innerText = tagline;
+        pPrice.innerText = `${price}€/jour`;
+
+        //append element into chosen section
+        article.appendChild(link);
+        link.appendChild(img);
+        link.appendChild(photographerName);
+        link.appendChild(localisation);
+        link.appendChild(pTagline);
+        link.appendChild(pPrice);
 
         return (article);
     }
+
     return { name, picture, city, country, tagline, price, getUserCardDOM }
 }
