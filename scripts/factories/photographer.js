@@ -5,6 +5,7 @@ function photographerTemplate(data) {
 
     const picture = `assets/photographers/${portrait}`;
 
+    //function to display user card in index
     function getUserCardDOM() {
 
         //creating elements from the dom
@@ -17,7 +18,7 @@ function photographerTemplate(data) {
         const pPrice = document.createElement("p");
         const url = `./photographer.html?id=${id}`;
 
-        //inserting attributs for each elements
+        //inserting attributes for each elements
         img.setAttribute("src", picture)
         localisation.setAttribute("class", "localisation");
         pTagline.setAttribute("class", "tagline");
@@ -41,5 +42,41 @@ function photographerTemplate(data) {
         return (article);
     }
 
-    return { name, picture, city, country, tagline, price, getUserCardDOM }
+    //function to display photographer in header of its own photographer page
+    function getPhotographerDom() {
+
+        //creating elements from the dom
+        const header = document.querySelector('.photograph-header');
+        const divPresentation = document.createElement('div');
+        const h1 = document.createElement('h1');
+        const pLocalisation = document.createElement('p');
+        const pTagline = document.createElement('p');
+        const divImg = document.createElement('div');
+        const img = document.createElement('img');
+        
+        //inserting attributes for each elements
+        divPresentation.setAttribute("class", "presentation");
+        h1.setAttribute("class", name);
+        pLocalisation.setAttribute("class", "localisation" )
+        pTagline.setAttribute("class", "tagline");
+        divImg.setAttribute("class", "portrait");
+        img.setAttribute("src", picture);
+
+        //text to show with collected data
+        h1.innerText = name;
+        pLocalisation.innerText = `${city}, ${country}`;
+        pTagline.innerText = tagline;
+        
+        //append element into chosen section
+        header.appendChild(divPresentation);
+        divPresentation.appendChild(h1);
+        divPresentation.appendChild(pLocalisation);
+        divPresentation.appendChild(pTagline);
+        divImg.appendChild(img);
+        header.appendChild(divImg);
+
+        return (header);
+    }
+
+    return { name, picture, city, country, tagline, price, id, getUserCardDOM, getPhotographerDom }
 }
