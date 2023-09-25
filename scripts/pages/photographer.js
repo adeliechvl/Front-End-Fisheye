@@ -13,13 +13,9 @@ async function getPhotographer() {
 async function getMedias() {
     const parameters = new URLSearchParams(window.location.search)
     const idString = parameters.get('id')
-
-
-    // promesse
     const photographerData = await fetch('./data/photographers.json')
         .then((data) => data.json());
 
-    //récupération des médias
     let media = photographerData.media.filter(
         (mediaObj) => mediaObj.photographerId == idString
     );
@@ -41,7 +37,6 @@ async function displayMedia(media) {
         picturesSection.appendChild(pictureCardDOM);
     });
 }
-
 
 async function init() {
     const photographer = await getPhotographer();

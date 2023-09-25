@@ -19,6 +19,7 @@
 .photograph-header .presentation h1 {
     color: #D3573C;
     font-size: 64px;
+    width:358px;
     margin: 0;
 }
 
@@ -45,7 +46,7 @@
     border-radius: 5px;
     cursor: pointer;
     position: relative;
-    left: 46%;
+    left: 43%;
 }
 
 .photograph-header .portrait {
@@ -166,8 +167,8 @@ form input {
 
 .afficherMedias .media section img,
 .afficherMedias .media section video {
-    width: 300px;
-    height: 250px;
+    width: 320px;
+    height: 270px;
     object-fit: cover;
     margin-top: 20px;
     border-radius: 4px;
