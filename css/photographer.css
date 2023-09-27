@@ -122,6 +122,22 @@ form input {
     border-radius: 5px;
 }
 
+.send_button {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    width: 170px;
+    height: 69px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* PICTURES SECTION */
 
 .picturesSection {
@@ -152,10 +168,6 @@ form input {
     margin: 20px 0;
 }
 
-.picturesSection form select option {
-    border-bottom-style: 2px solid #FFFFFF;
-}
-
 .picturesSection .afficherMedias {
     display: flex;
     flex-direction: row;
@@ -167,18 +179,60 @@ form input {
 
 .afficherMedias .media section img,
 .afficherMedias .media section video {
-    width: 320px;
-    height: 270px;
+    width: 325px;
+    height: 275px;
     object-fit: cover;
     margin-top: 20px;
     border-radius: 4px;
 }
 
+.afficherMedias .media section .titreLike {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 0;
+}
+
 .afficherMedias .media h3 {
     color: #901C1C;
     font-size: 24px;
-    margin: 10px 0;
-    width: 320px;
+    font-weight: 400;
+    margin: 0;
+    width: 300px;
     display: flex;
     flex-wrap: wrap;
+}
+
+.titreLike i {
+   color: #901C1C;
+}
+
+
+/* ENCART */
+
+.encart {
+    position: fixed;
+    bottom: 0;
+    right: 2%;
+    width: 376px;
+    height: 69px;
+    background-color: #DB8876;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.likes {
+    width: 50%;
+    font-size: 24px;
+}
+
+.textEncart, #price {
+    font-size: 24px;
+    font-weight: 500;
+  
 }

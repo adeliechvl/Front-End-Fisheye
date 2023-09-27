@@ -30,17 +30,21 @@
         <form method="post">
           <div class="formData">
             <label for="first">Prénom</label>
+            <input>
           </div>
           <div class="formData">
             <label for="last">Nom</label>
+            <input>
           </div>
           <div class="formData">
             <label for="email">E-mail</label>
+            <input>
           </div>
           <div class="formData">
             <label for="message">Votre message</label>
+            <input>
           </div>
-          <input class="contact_button" />
+          <input type="submit" class="send_button">
         </form>
     </div>
   </div>
@@ -53,8 +57,16 @@
         <option for="title">Titre</option>
       </select>
     </div>
+    <div class="encart">  
+      <div class="likes">        
+        <span class="textEncart" id="nbLikes"></span>
+          <i class="fa-solid fa-heart"></i> 
+      </div>         
+      <span id="price"></span>
+    </div>
     <div class="afficherMedias"></div>
   </div>
+  <script src="https://kit.fontawesome.com/cb547e51af.js" crossorigin="anonymous"></script>
   <script src="/scripts/pages/photographer.js"></script>
   <script src="/scripts/factories/photographer.js"></script>
   <script src="/scripts/factories/media.js"></script>
