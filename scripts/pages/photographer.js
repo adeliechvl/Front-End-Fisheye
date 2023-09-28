@@ -23,10 +23,10 @@ async function getMedias() {
 }
 
 async function displayDataPhotographer(photographer) {
-    const photographHeader = document.querySelector("#main");
+    const photographHeader = document.querySelector(".photograph-header");
     const photographerModel = new photographerTemplate(photographer);
-    const photographerDom = photographerModel.getPhotographerDom();
-    photographHeader.appendChild(photographerDom);
+    photographerModel.getPhotographerDom();
+    //photographHeader.appendChild(photographerDom);
 }
 
 async function displayMedia(media) {
@@ -40,10 +40,10 @@ async function displayMedia(media) {
 
 async function init() {
     const photographer = await getPhotographer();
-    displayDataPhotographer(photographer);
+    await displayDataPhotographer(photographer);
 
     const photographerMedias = await getMedias();
-    displayMedia(photographerMedias);
+    await displayMedia(photographerMedias);
 }
 
 init();

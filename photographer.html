@@ -15,61 +15,80 @@
       <img src="assets/images/logo.png" class="logo" />
     </a>
   </header>
+
   <main id="main">
+  
     <div class="photograph-header">
       <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
     </div>
+
+    <div id="contact_modal">
+      <div class="modal">
+        <header>
+          <h2>Contactez-moi</h2>
+          <img src="assets/icons/close.svg" onclick="closeModal()" />
+        </header>
+        <form>
+          <form method="post">
+            <div class="formData">
+              <label for="first">Prénom</label>
+              <input>
+            </div>
+            <div class="formData">
+              <label for="last">Nom</label>
+              <input>
+            </div>
+            <div class="formData">
+              <label for="email">E-mail</label>
+              <input>
+            </div>
+            <div class="formData">
+              <label for="message">Votre message</label>
+              <input>
+            </div>
+            <input type="submit" class="send_button">
+          </form>
+      </div>
+    </div>
+
+    <div class="picturesSection">
+      <div class="tri">
+        <label for="tri" name="tri">Trier par</label>
+        <select class="tri_button" id="tri">
+          <option for="popularity">Popularité</option>
+          <option for="date">Date</option>
+          <option for="title">Titre</option>
+        </select>
+      </div>
+      <div class="encart">
+        <div class="likes">
+          <span class="textEncart" id="nbLikes"></span>
+          <i class="fa-solid fa-heart"></i>
+        </div>
+        <span id="price"></span>
+      </div>
+      <div class="afficherMedias"></div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+      <button class="close_lightbox">
+        <img src="assets/icons/closeLightbox.svg" onclick="closeLightbox()" />
+      </button>
+      <button class="prev_lightbox" onclick="previous()">
+        <i class="fa fa-chevron-left"></i>
+      </button>
+      <button class="next_lightbox" onclick="next()">
+        <i class="fa fa-chevron-right"></i>
+      </button>
+      <div class="lightbox_container"></div>
+    </div>
   </main>
-  <div id="contact_modal">
-    <div class="modal">
-      <header>
-        <h2>Contactez-moi</h2>
-        <img src="assets/icons/close.svg" onclick="closeModal()" />
-      </header>
-      <form>
-        <form method="post">
-          <div class="formData">
-            <label for="first">Prénom</label>
-            <input>
-          </div>
-          <div class="formData">
-            <label for="last">Nom</label>
-            <input>
-          </div>
-          <div class="formData">
-            <label for="email">E-mail</label>
-            <input>
-          </div>
-          <div class="formData">
-            <label for="message">Votre message</label>
-            <input>
-          </div>
-          <input type="submit" class="send_button">
-        </form>
-    </div>
-  </div>
-  <div class="picturesSection">
-    <div class="tri">
-      <label for="tri" name="tri">Trier par</label>
-      <select class="tri_button" id="tri">
-        <option for="popularity">Popularité</option>
-        <option for="date">Date</option>
-        <option for="title">Titre</option>
-      </select>
-    </div>
-    <div class="encart">  
-      <div class="likes">        
-        <span class="textEncart" id="nbLikes"></span>
-          <i class="fa-solid fa-heart"></i> 
-      </div>         
-      <span id="price"></span>
-    </div>
-    <div class="afficherMedias"></div>
-  </div>
+
   <script src="https://kit.fontawesome.com/cb547e51af.js" crossorigin="anonymous"></script>
   <script src="/scripts/pages/photographer.js"></script>
   <script src="/scripts/factories/photographer.js"></script>
   <script src="/scripts/factories/media.js"></script>
+  <script src="/scripts/factories/lightbox.js"></script>
   <script src="/scripts/utils/contactForm.js"></script>
 </body>
 

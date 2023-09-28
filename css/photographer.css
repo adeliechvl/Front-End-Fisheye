@@ -207,6 +207,25 @@ form input {
    color: #901C1C;
 }
 
+/* LIGHTBOX */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    background-color: white;
+}
+
+.lightbox_container img {
+    max-width: 1050px;
+    max-height: 900px;
+    object-fit: contain;
+}
+
+.titreLightbox {
+    color: #901C1C;
+    font-size: 24px;
+    font-weight: 400;
+}
 
 /* ENCART */
 
