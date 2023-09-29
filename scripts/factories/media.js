@@ -12,6 +12,7 @@ function pictureTemplate(data) {
         const section = document.createElement('section');
         const h3 = document.createElement('h3');
         const pTitreLike = document.createElement('p');
+        const pLikes = document.createElement('p');
         const likeButton = document.createElement('i');
         const container = document.querySelector('.lightbox_container');
         const titreLightbox = document.createElement('p');
@@ -20,8 +21,9 @@ function pictureTemplate(data) {
         //inserting attributes for each elements
         article.setAttribute("class", "media");
         pTitreLike.setAttribute("class", "titreLike");
+        pLikes.setAttribute("class", "picture-likes");
         likeButton.setAttribute("class", "fa-solid fa-heart");
-
+        
         //event to display lightbox on click
         article.addEventListener("click",(e) =>{
             displayLightbox();
@@ -33,6 +35,7 @@ function pictureTemplate(data) {
         //text to show with collected data
         h3.innerText = title;
         titreLightbox.innerText = title;
+        pLikes.innerHTML = likes;
 
         //instruction to display pictures and videos
         if (data.image) {
@@ -57,6 +60,7 @@ function pictureTemplate(data) {
         article.appendChild(section);
         section.appendChild(pTitreLike);
         pTitreLike.appendChild(h3);
+        pTitreLike.appendChild(pLikes);
         pTitreLike.appendChild(likeButton);
         container.appendChild(slide);
         slide.appendChild(titreLightbox);
