@@ -26,7 +26,6 @@ async function displayDataPhotographer(photographer) {
     const photographHeader = document.querySelector(".photograph-header");
     const photographerModel = new photographerTemplate(photographer);
     photographerModel.getPhotographerDom();
-    //photographHeader.appendChild(photographerDom);
 }
 
 async function displayMedia(media) {

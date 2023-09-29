@@ -19,7 +19,7 @@
 .photograph-header .presentation h1 {
     color: #D3573C;
     font-size: 64px;
-    width:358px;
+    width: 358px;
     margin: 0;
 }
 
@@ -204,7 +204,7 @@ form input {
 }
 
 .titreLike i {
-   color: #901C1C;
+    color: #901C1C;
 }
 
 /* LIGHTBOX */
@@ -212,19 +212,70 @@ form input {
 .lightbox {
     display: none;
     position: fixed;
+    top: 0;
+    left: 0;
+    right: 0%;
+    z-index: 10;
+    height: 100%;
     background-color: white;
+    overflow: auto;
+    width: 100%;
+    margin: auto;
 }
 
-.lightbox_container img {
-    max-width: 1050px;
-    max-height: 900px;
-    object-fit: contain;
+.lightbox_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0 50px;
+    width: 90%;
+    margin: auto;
+    right: 0%;
+}
+
+.lightbox_container img, 
+.lightbox_container video {
+    width: 900px;
+    height: 700px;
+    object-fit: cover;
+    margin: 20px 0;
+}
+
+.close_lightbox {
+    width: 72px;
+    height: 72px;
+    background: transparent;
+    border: transparent;
+    position: fixed;
+    left: 87%;
+    top: 10px;
+    cursor: pointer;
+}
+
+.prev_lightbox,
+.next_lightbox {
+    color: #901C1C;
+    position: fixed;
+    top: 60%;
+    left: 8%;
+    z-index: 11;
+    cursor: pointer;
+    background-color: transparent;
+    border: transparent;
+    font-size: 50px;
+}
+
+.next_lightbox {
+    left: 87%;
 }
 
 .titreLightbox {
     color: #901C1C;
     font-size: 24px;
     font-weight: 400;
+    margin: 0;
+    margin-bottom: 20px;
 }
 
 /* ENCART */
@@ -250,8 +301,8 @@ form input {
     font-size: 24px;
 }
 
-.textEncart, #price {
+.textEncart,
+#price {
     font-size: 24px;
     font-weight: 500;
-  
 }

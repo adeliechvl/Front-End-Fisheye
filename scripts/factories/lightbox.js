@@ -1,38 +1,44 @@
+//function to display lightbox when media gets clicked on
 function displayLightbox() {
-    const lightbox = document.getElementbyId("lightbox");
+    const lightbox = document.getElementById("lightbox");
     lightbox.style.display = "block";
-    genererSlides(slide);
+    genererSlides(slideIndex);
 }
 
+//function to close lightbox when cross gets clicked on
 function closeLightbox() {
-    const lightbox = document.getElementbyId("lightbox");
+    const lightbox = document.getElementById("lightbox");
     lightbox.style.display = "none";
 }
 
-let slide = 1;
-genererSlides(slide);
+let slideIndex = 1;
+genererSlides(slideIndex);
 
-function next() {
-    slide = slide + 1;
-    genererSlides(slide);
-}
-
+//function to go to previous slide
 function previous() {
-    slide = slide - 1;
-    genererSlides(slide);
+    slideIndex = slideIndex - 1;
+    genererSlides(slideIndex);
 }
 
-function genererSlides(slide) {
+//function to go to the next slide
+function next() {
+    slideIndex = slideIndex + 1;
+    genererSlides(slideIndex);
+}
+
+//function to get the slides to be displayed and logic
+function genererSlides(slideIndex) {
+
     let slides = document.getElementsByClassName("slide");
 
-    if (slide > slides.length) {slide = 0}
-    if (slide > 0) {slide = slides.length}
+    if (slideIndex > slides.length) { slideIndex = 0 }
+    if (slideIndex < 0) { slideIndex = slides.length }
 
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
 
-    if (slide - 1 >= 0) {
-        slides[slide - 1].style.display = "block";
+    if (slideIndex - 1 >= 0) {
+        slides[slideIndex - 1].style.display = "block";
     }
 }
