@@ -240,8 +240,8 @@ form input {
 
 .lightbox_container img, 
 .lightbox_container video {
-    width: 900px;
-    height: 700px;
+    max-width: 900px;
+    max-height: 900px;
     object-fit: cover;
     margin: 20px 0;
 }
