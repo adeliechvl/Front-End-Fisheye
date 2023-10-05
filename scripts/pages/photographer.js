@@ -23,9 +23,10 @@ async function getMedias() {
 }
 
 async function displayDataPhotographer(photographer) {
-    const photographHeader = document.querySelector(".photograph-header");
     const photographerModel = new photographerTemplate(photographer);
     photographerModel.getPhotographerDom();
+    const encart = document.querySelector("#price");
+    encart.innerText = photographerModel.price + `€/Jour`;
 }
 
 async function displayMedia(media) {

@@ -288,7 +288,7 @@ form input {
     position: fixed;
     bottom: 0;
     right: 2%;
-    width: 376px;
+    width: 250px;
     height: 69px;
     background-color: #DB8876;
     border-top-left-radius: 5px;
@@ -297,7 +297,6 @@ form input {
     align-items: center;
     justify-content: space-between;
     padding-left: 1%;
-    padding-right: 1%;
 }
 
 .likes {
@@ -309,4 +308,5 @@ form input {
 #price {
     font-size: 24px;
     font-weight: 500;
+    padding: 0 20px;
 }

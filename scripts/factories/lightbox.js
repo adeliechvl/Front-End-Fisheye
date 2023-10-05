@@ -1,8 +1,8 @@
 //function to display lightbox when media gets clicked on
-function displayLightbox() {
+function displayLightbox(currentIndex) {
     const lightbox = document.getElementById("lightbox");
     lightbox.style.display = "block";
-    genererSlides(slideIndex);
+    genererSlides(currentIndex);
 }
 
 //function to close lightbox when cross gets clicked on
@@ -26,7 +26,7 @@ function next() {
     genererSlides(slideIndex);
 }
 
-//function to get the slides to be displayed and logic
+//function to get the slides to be displayed
 function genererSlides(slideIndex) {
 
     let slides = document.getElementsByClassName("slide");
