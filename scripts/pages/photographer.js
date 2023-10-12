@@ -29,6 +29,36 @@ async function displayDataPhotographer(photographer) {
     encart.innerText = photographerModel.price + `€/Jour`;
 }
 
+function tri(photographerMedias) {
+    const boutonTri = document.querySelector("#tri");
+    boutonTri.addEventListener("change", function () {
+        const container = document.querySelector('.afficherMedias');
+        container.innerText = "";
+        switch (boutonTri.value) {
+
+            case 'popularity':
+                media = photographerMedias.sort((a, b) => b.likes - a.likes);
+                displayMedia(media);
+                break;
+
+            case 'date':
+                media = photographerMedias.sort((a, b) => new Date(b.date) - new Date(a.date));
+                displayMedia(media);
+                break;
+
+            case 'title':
+                media = photographerMedias.sort((a, b) => a.title.localeCompare(b.title));
+                displayMedia(media);
+                break;
+
+            default:
+                displayMedia(photographerMedias);
+                break;
+        }
+
+    });
+}
+
 async function displayMedia(media) {
     const picturesSection = document.querySelector(".afficherMedias");
     media.forEach((picture) => {
@@ -44,6 +74,7 @@ async function init() {
 
     const photographerMedias = await getMedias();
     await displayMedia(photographerMedias);
+    tri(photographerMedias);
 }
 
 init();
