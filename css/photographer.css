@@ -73,15 +73,12 @@
     width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
     padding: 35px;
-    margin: auto;
-}
-
-.modal header {
-    justify-content: space-between;
-    width: 100%;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: #312E2E -5px 5px 20px -10PX;
 }
 
 .modal header img {
@@ -91,35 +88,50 @@
 .modal header h2 {
     font-size: 64px;
     font-weight: normal;
-    text-align: center;
+    margin: 0;
+}
+
+.modal header button {
+    background-color: transparent;
+    border: transparent;
 }
 
 /* FORM */
 
-form {
+#contactForm {
     display: flex;
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
 }
 
-form label {
+#contactForm label {
     color: #312E2E;
     font-size: 36px;
+    margin: 5px 0 5px;
 }
 
-form div {
+#contactForm div {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-bottom: 26px;
+    margin-bottom: 5px;
 }
 
-form input {
-    width: 100%;
+#contactForm input, textarea{
     height: 68px;
     border: none;
     border-radius: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 5px;
+}
+
+#contactForm .erreur {
+    color: #f10f0f;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 5px;
 }
 
 .send_button {
@@ -132,7 +144,7 @@ form input {
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
-    margin: 0;
+    margin: 20px 0 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -144,9 +156,8 @@ form input {
     margin: 0 100px;
 }
 
-.picturesSection .tri {
-    display: flex;
-    margin: 20px 0;
+.tri {
+    margin-top: 20px;
 }
 
 .picturesSection .tri_button {
@@ -202,11 +213,13 @@ form input {
     display: flex;
     flex-wrap: wrap;
 }
-.picture-likes{
+
+.picture-likes {
     font-size: 24px;
     margin: 0 2px;
-    color:#901C1C;
+    color: #901C1C;
 }
+
 .titreLike i {
     color: #901C1C;
 }
@@ -238,7 +251,7 @@ form input {
     right: 0%;
 }
 
-.lightbox_container img, 
+.lightbox_container img,
 .lightbox_container video {
     max-width: 900px;
     max-height: 900px;

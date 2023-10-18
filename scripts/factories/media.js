@@ -1,4 +1,5 @@
 let totalLikes = 0;
+// let newLike = 0;
 
 function pictureTemplate(data) {
 
@@ -42,11 +43,13 @@ function pictureTemplate(data) {
             if (data.isLiked) {
                 totalLikes--;
                 nbLikes--;
+                //keepLikes--;
                 data.isLiked = false;
                 likeButton.setAttribute("class", "fa-regular fa-heart");
             } else {
                 totalLikes++;
                 nbLikes++;
+                //keepLikes++;
                 data.isLiked = true;
                 likeButton.setAttribute("class", "fa-solid fa-heart");
             }
@@ -58,11 +61,15 @@ function pictureTemplate(data) {
 
         //inserting attributes for each elements
         article.setAttribute("class", "media");
+        section.setAttribute("role", "dialog");
         media.setAttribute("class", "visuelMedia")
         media.id = id;
         pTitreLike.setAttribute("class", "titreLike");
+        pTitreLike.setAttribute("aria-label", "likes")
+        h3.setAttribute("aria-label", title);
         pLikes.setAttribute("class", "picture-likes");
         iLikes.setAttribute("class", "fa-solid fa-heart");
+        iLikes.setAttribute("aria-label", "likes");
 
         
         //event to display lightbox on click
@@ -87,16 +94,23 @@ function pictureTemplate(data) {
             const image = document.createElement('img');
             const imgLightbox = document.createElement('img');
             image.setAttribute("src", picture)
+            image.setAttribute("alt", title);
             imgLightbox.setAttribute("src", picture);
+            imgLightbox.setAttribute("alt", title);            
+            imgLightbox.setAttribute("aria-label", "Version agrandie de la photo");
             media.appendChild(image);
             slide.appendChild(imgLightbox);
         } else {
             const video = document.createElement('video');
             const videoLightbox = document.createElement('video');
             video.setAttribute("src", mediaVideo);
+            video.setAttribute("alt", title);
             video.setAttribute("controls", true);
             videoLightbox.setAttribute("src", mediaVideo);
+            videoLightbox.setAttribute("type", "video/mp4");
             videoLightbox.setAttribute("controls", true);
+            videoLightbox.setAttribute("alt", title);
+            videoLightbox.setAttribute("aria-label", "Version agrandie de la vidéo");
             media.appendChild(video);
             slide.appendChild(videoLightbox);
         }

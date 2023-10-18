@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <link href="css/style.css" rel="stylesheet" type="text/css">
   <meta charset="utf-8">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
@@ -12,55 +12,64 @@
 <body>
   <header>
     <a href="index.html">
-      <img src="assets/images/logo.png" class="logo" />
+      <img src="assets/images/logo.png" class="logo" alt="Logo Fisheye">
     </a>
   </header>
 
   <main id="main">
-  
+
     <div class="photograph-header">
-      <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+      <button class="contact_button" onclick="displayModal()"
+        aria-label="Bouton pour contacter le photographe">Contactez-moi</button>
     </div>
 
     <div id="contact_modal">
       <div class="modal">
-        <header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+        <header class="modalHeader">
+          <h2 class="contactTitre">Contactez-moi</h2>
+          <button class="fermer" title="Fermer le formulaire de contact">
+            <img src="assets/icons/close.svg" alt="fermer" onclick="closeModal()">
+          </button>
         </header>
-        <form>
-          <form method="post">
-            <div class="formData">
-              <label for="first">Prénom</label>
-              <input>
-            </div>
-            <div class="formData">
-              <label for="last">Nom</label>
-              <input>
-            </div>
-            <div class="formData">
-              <label for="email">E-mail</label>
-              <input>
-            </div>
-            <div class="formData">
-              <label for="message">Votre message</label>
-              <input>
-            </div>
-            <input type="submit" class="send_button">
-          </form>
+        <form method="post" id="contactForm">
+          <div class="formData">
+            <label for="first">Prénom</label>
+            <input type="text" id="first" name="first" aria-label="Prénom" aria-required="true" aria-invalid="false"
+              minlength="2">
+            <div class="erreur" id="erreurPrenom"></div>
+          </div>
+          <div class="formData">
+            <label for="last">Nom</label>
+            <input type="text" id="last" name="last" aria-label="Nom" aria-required="true" aria-invalid="false"
+              minlength="2">
+            <div class="erreur" id="erreurNom"></div>
+          </div>
+          <div class="formData">
+            <label for="email">E-mail</label>
+            <input type="text" id="email" name="email" aria-label="Email" aria-required="true" aria-invalid="false">
+            <div class="erreur" id="erreurMail"></div>
+          </div>
+          <div class="formData">
+            <label for="message">Votre message</label>
+            <textarea id="message" name="message" aria-label="Input pour écrire votre message" aria-required="true"
+              aria-invalid="false"></textarea>
+            <div class="erreur" id="erreurMessage"></div>
+
+          </div>
+          <input type="submit" class="send_button" id="envoi" value="Envoyer" aria-label="Envoyer le formulaire de contact">
+        </form>
       </div>
     </div>
 
     <div class="picturesSection">
-      <div class="tri">
-        <label for="tri" name="tri">Trier par</label>
-        <select class="tri_button" id="tri">
-          <option value=""></option>
+      <form class="tri" action="post">
+        <label for="tri">Trier par</label>
+        <select class="tri_button" name="tri" id="tri" aria-label="Bouton pour choisir un filtre de tri">
           <option value="popularity">Popularité</option>
           <option value="date">Date</option>
           <option value="title">Titre</option>
         </select>
-      </div>
+      </form>
       <div class="encart">
         <div class="likes">
           <span class="textEncart" id="nbLikes"></span>
@@ -71,19 +80,20 @@
       <div class="afficherMedias"></div>
     </div>
 
-    <div class="lightbox" id="lightbox">
-      <button class="close_lightbox">
-        <img src="assets/icons/closeLightbox.svg" onclick="closeLightbox()" />
+    <div class="lightbox" id="lightbox" role="dialog">
+      <button class="close_lightbox" aria-label="Fermer la Lightbox">
+        <img src="assets/icons/closeLightbox.svg" onclick="closeLightbox()" aria-label="Fermer la Lightbox"
+          alt="Croix pour fermer la Lightbox">
       </button>
-      <button class="prev_lightbox" onclick="previous()">
+      <button class="prev_lightbox" onclick="previous()" aria-label="Slide Précédente">
         <i class="fa fa-chevron-left"></i>
-      </button>      
+      </button>
       <div class="lightbox_container"></div>
-      <button class="next_lightbox" onclick="next()">
+      <button class="next_lightbox" onclick="next()" aria-label="Slide Suivante">
         <i class="fa fa-chevron-right"></i>
       </button>
-
     </div>
+
   </main>
 
   <script src="https://kit.fontawesome.com/cb547e51af.js" crossorigin="anonymous"></script>

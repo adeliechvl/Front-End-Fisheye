@@ -5,13 +5,11 @@ body {
     margin: 0;
 }
 
-
 header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    height: 90px;
+    align-items: baseline;
 }
 
 h1 {
@@ -77,4 +75,3 @@ h1 {
     color: #757575;
     margin: 3px;
 }
-

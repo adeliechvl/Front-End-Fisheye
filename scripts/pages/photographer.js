@@ -32,10 +32,11 @@ async function displayDataPhotographer(photographer) {
 function tri(photographerMedias) {
     const boutonTri = document.querySelector("#tri");
     boutonTri.addEventListener("change", function () {
+        totalLikes = 0;
+        //totalLikes = keepLikes; (pour stocker les likes en changeant de paramètre de tri)
         const container = document.querySelector('.afficherMedias');
         container.innerText = "";
         switch (boutonTri.value) {
-
             case 'popularity':
                 media = photographerMedias.sort((a, b) => b.likes - a.likes);
                 displayMedia(media);
@@ -55,7 +56,6 @@ function tri(photographerMedias) {
                 displayMedia(photographerMedias);
                 break;
         }
-
     });
 }
 
