@@ -13,13 +13,13 @@ function pictureTemplate(data) {
         //creating elements from the dom
         const article = document.createElement('article');
         const section = document.createElement('section');
-        const media = document.createElement('div');
+        const media = document.createElement('button');
         const h3 = document.createElement('h3');
         const pTitreLike = document.createElement('div');
-        const pLikes = document.createElement('p');
-        const likeButton = document.createElement('i');
+        const pLikes = document.createElement('h4');
+        const likeButton = document.createElement('button');
         const container = document.querySelector('.lightbox_container');
-        const titreLightbox = document.createElement('p');
+        const titreLightbox = document.createElement('h4');
         const slide = document.createElement('div');
         const encart = document.querySelector('.encart');
         const sLikes = document.querySelector('.likes');
@@ -33,8 +33,10 @@ function pictureTemplate(data) {
         totalLikes += nbLikes;
         if (data.isLiked) {
             likeButton.setAttribute("class", "fa-solid fa-heart");
+            likeButton.setAttribute("aria-label", "bouton like");
         } else {
-            likeButton.setAttribute("class", "fa-regular fa-heart");
+            likeButton.setAttribute("class", "fa-regular fa-heart");                
+            likeButton.setAttribute("aria-label", "bouton liké");
         }
         pLikes.innerText = nbLikes + " ";
         sLikes.innerText = totalLikes + " ";
@@ -63,13 +65,15 @@ function pictureTemplate(data) {
         article.setAttribute("class", "media");
         section.setAttribute("role", "dialog");
         media.setAttribute("class", "visuelMedia")
+        media.setAttribute("aria-label", "media");
         media.id = id;
         pTitreLike.setAttribute("class", "titreLike");
         pTitreLike.setAttribute("aria-label", "likes")
         h3.setAttribute("aria-label", title);
         pLikes.setAttribute("class", "picture-likes");
+        pLikes.setAttribute("aria-label", "bouton like");
         iLikes.setAttribute("class", "fa-solid fa-heart");
-        iLikes.setAttribute("aria-label", "likes");
+        iLikes.setAttribute("aria-label", "total de likes");
 
         
         //event to display lightbox on click

@@ -9,12 +9,12 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
 }
 
 h1 {
     color: #901C1C;
-    margin-right: 100px;
+    margin: 0 100px 0 0;
 }
 
 .logo {
